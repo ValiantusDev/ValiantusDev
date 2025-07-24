@@ -44,3 +44,8 @@ ul {
 em {
   color: #555;
 }
+
+#PortfolioHeader.collapsed h2 {
+  height: 0;
+  overflow: hidden; /* Hide the header when collapsed */
+}
