@@ -14,7 +14,7 @@ My projects and skills can be viewed in detail in a portfolio site *(Hosted by G
 - Cross-Platform
 - Written in C#
 - Using Monogame, Gum, Aseprite and others!  
-More info in when development nears public testing.
+More info when development nears public testing.
 
 ## 📫 Contact
 - Email: gytis.valatkevicius@gmail.com
