@@ -2,68 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gytis | Valiantus Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Load Tailwind first -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Then configure it -->
+  <script>
+    tailwind.config = {
+      content: [
+        './index.html',
+        './assets/js/**/*.js'
+      ],
+      darkMode: 'class',
+      theme: { extend: {} },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
-  <header id="PortfolioHeader">
-    <h2>Welcome, my local time is <span id="myTime"></span></h2>
-    <h2>I’m Gytis a.k.a Valiantus, a Full-Stack Developer in my twenties with a passion for building modern web apps and DIY IoT projects.</h2>
-    <h2>Currently looking for flexible remote work opportunities, mostly interested in game or web development, but could also see myself doing some online IT support, CAD modelling or assisting a business/project case.</h2>
-    <h2>Feel free to check out my projects below or drop me a message on Email or Discord!</h2>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-2">
+        <img src="assets/images/Logo.png"
+          alt="Logo"
+          class="h-8 w-8 rounded-full border-2 border-gray-300 dark:border-gray-600" />
+        <span class="text-xl font-semibold">Valiantus</span>
+      </a>
+      <nav class="flex items-center space-x-4">
+        <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+        <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+<button id="themeToggleBtn" class="p-2 focus:outline-none">
+  <!-- sun icon -->
+  <svg id="iconLight"
+       xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+       class="h-6 w-6">
+    <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+  </svg>
+
+  <!-- moon icon -->
+  <svg id="iconDark"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke="currentColor"
+       class="h-6 w-6 hidden">
+    <path stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 12.79A9 9 0 1111.21 3
+             7 7 0 0021 12.79z" />
+  </svg>
+</button>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section class="section">
-      <h2>🛠️ Projects and Skills</h2>
 
-      <div class="project">
-        <h3>🖥️ Portfolio Website</h3>
-        <p>This portfolio site — built with HTML, CSS, a bit of JS, hosted on GitHub Pages.</p>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-4">Hey, I’m Gytis <span class="text-indigo-200">a.k.a Valiantus</span></h2>
+      <p class="text-xl mb-6">Full-Stack Dev & IoT tinkerer.</p>
+      <p class="text-x1 mb-6">Remote opportunities welcome!</p>
+      <p class="uppercase text-sm tracking-wide">My local time: <span id="myTime" class="font-mono"></span></p>
+    </div>
+  </section>
+
+<!-- Projects -->
+<section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+  <h3 class="text-3xl font-semibold text-center mb-8">Projects & Skills</h3>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- Card 1 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+      <img src="assets/images/Portfolio.png" alt="Portfolio screenshot"
+           class="w-full h-auto object-cover" />
+      <div class="p-4 flex flex-col flex-grow">
+        <h4 class="font-semibold text-lg mb-2 text-gray-900">
+          Portfolio Website
+        </h4>
+        <p class="flex-grow mb-4 text-gray-600">
+          This site — built with HTML, Tailwind CSS, JS, hosted on GitHub Pages.
+        </p>
+        <a href="https://github.com/ValiantusDev/ValiantusDev"
+           class="mt-auto block text-center bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+          View Code
+        </a>
       </div>
+    </div>
 
-      <div class="project">
-        <h3>🛒 Android E-commerce App prototype</h3>
-        <p>A mini online store MVP <em>(Minimal Viable Product)</em> with full project documentation:</p>
-        <ul>
-          <li>Kotlin Frontend and Backend</li>
-          <li>Stripe integration for payments</li>
-          <li>Business plan, user and market research</li>
-          <li>Android only (due to time constraints for BA project)</li>
-        </ul>
+    <!-- Card 2 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+      <img src="assets/images/Android_Kotlin.png" alt="E-commerce app screenshot"
+           class="w-full h-auto object-cover" />
+      <div class="p-4 flex flex-col flex-grow">
+        <h4 class="font-semibold text-lg mb-2 text-gray-900">
+          Android E‑commerce MVP
+        </h4>
+        <p class="flex-grow mb-4 text-gray-600">
+          Kotlin front/back, Stripe payments, BA docs.
+        </p>
       </div>
+    </div>
 
-      <div class="project">
-        <h3>🛡️ Community management, leadership and support</h3>
-        <p>Managed online guilds and game communities, organizing events and keeping things positive.</p>
-        <ul>
-          <li>Leadership and Management</li>
-          <li>Conflict Resolution</li>
-          <li>Event Coordination</li>
-        </ul>
+    <!-- Card 3 -->
+    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+      <img src="assets/images/Masterwatch_icon.png" alt="Project 3 screenshot"
+           class="w-full h-auto object-cover" />
+      <div class="p-4 flex flex-col flex-grow">
+        <h4 class="font-semibold text-lg mb-2 text-gray-900">
+          Masterwatch - Game
+        </h4>
+        <p class="flex-grow mb-4 text-gray-600">
+          Cross-Platform, Written in C#, Using Monogame, Gum, Aseprite and others!
+        </p>
       </div>
+    </div>
+    
+  </div>
+</section>
 
-      <div class="project">
-        <h3>🎮 Currently developing a Cross-Platform game - Masterwatch</h3>
-        <p>More info when development nears public testing.</p>
-        <ul>
-          <li>Cross-Platform</li>
-          <li>Written in C# using Monogame, Gum and others</li>
-          <li>Aseprite used for asset creation</li>
-        </ul>
-      </div>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="bg-white dark:bg-gray-800 py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-semibold mb-4">Get in Touch</h3>
+      <p class="mb-2">Email: <a href="mailto:gytis.valatkevicius@gmail.com"
+                                 class="text-blue-600 hover:underline dark:text-blue-400">
+        gytis.valatkevicius@gmail.com</a></p>
+      <p class="mb-2">Discord: <a href="https://discordapp.com/users/186108682583408640"
+                                   class="text-blue-600 hover:underline dark:text-blue-400" target="_blank">
+        .Valiantus</a></p>
+      <p class="italic text-gray-500 dark:text-gray-400">Preferred contact via email.</p>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>📫 Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:gytis.valatkevicius@gmail.com">gytis.valatkevicius@gmail.com</a></li>
-        <li>Discord: <a href="https://discordapp.com/users/186108682583408640" target="_blank">.Valiantus</a></li>
-      </ul>
-      <p><em>Feel free to check out the code or drop me a message — preferred way of contact is <strong>Discord</strong>!</em></p>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
