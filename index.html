@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gytis | Valiantus Portfolio</title>
 
-  <!-- Load Tailwind first -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Then configure it -->
+  <!-- Tailwind config -->
   <script>
     tailwind.config = {
       content: [
@@ -20,6 +21,9 @@
     };
   </script>
 
+  <!-- Font Awesome (single source for all icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -29,121 +33,296 @@
   <header class="sticky top-0 z-50 bg-white dark:bg-gray-800">
     <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
       <a href="#" class="flex items-center space-x-2">
-        <img src="assets/images/Logo.png"
-          alt="Logo"
+        <img src="assets/images/Logo.png" alt="Logo"
           class="h-8 w-8 rounded-full border-2 border-gray-300 dark:border-gray-600" />
         <span class="text-xl font-semibold">Valiantus</span>
       </a>
       <nav class="flex items-center space-x-4">
+        <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About Me</a>
         <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+        <a href="#pricing" class="hover:text-blue-600 dark:hover:text-blue-400">Pricing</a>
         <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-<button id="themeToggleBtn" class="p-2 focus:outline-none">
-  <!-- sun icon -->
-  <svg id="iconLight"
-       xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       fill="currentColor"
-       class="h-6 w-6">
-    <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
-  </svg>
 
-  <!-- moon icon -->
-  <svg id="iconDark"
-       xmlns="http://www.w3.org/2000/svg"
-       fill="none"
-       viewBox="0 0 24 24"
-       stroke="currentColor"
-       class="h-6 w-6 hidden">
-    <path stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 12.79A9 9 0 1111.21 3
+        <button id="themeToggleBtn" class="p-2 focus:outline-none">
+          <!-- sun icon -->
+          <svg id="iconLight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="h-6 w-6">
+            <path
+              d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+          </svg>
+
+          <!-- moon icon -->
+          <svg id="iconDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="h-6 w-6 hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3
              7 7 0 0021 12.79z" />
-  </svg>
-</button>
+          </svg>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Title -->
   <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-4xl font-bold mb-4">Hey, I’m Gytis <span class="text-indigo-200">a.k.a Valiantus</span></h2>
       <p class="text-xl mb-6">Full-Stack Dev & IoT tinkerer.</p>
-      <p class="text-x1 mb-6">Remote opportunities welcome!</p>
+      <p class="text-xl mb-6">Remote opportunities welcome!</p>
       <p class="uppercase text-sm tracking-wide">My local time: <span id="myTime" class="font-mono"></span></p>
     </div>
   </section>
 
-<!-- Projects -->
-<section id="projects" class="max-w-5xl mx-auto px-4 py-16">
-  <h3 class="text-3xl font-semibold text-center mb-8">Projects & Skills</h3>
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <!-- About Me -->
+  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-semibold text-center mb-8">About Me</h3>
+    <div class="max-w-3xl mx-auto text-gray-800 dark:text-gray-200 text-center">
+      <p>I’m a passionate junior Full-Stack developer with a background in IT and product development.</p>
+      <p>I enjoy building efficient, clean solutions and learning new technologies.</p>
+      <p>Eager to take on challenging projects and grow my skills!</p>
+    </div>
+  </section>
 
-    <!-- Card 1 -->
-    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
-      <img src="assets/images/Portfolio.png" alt="Portfolio screenshot"
-           class="w-full h-auto object-cover" />
-      <div class="p-4 flex flex-col flex-grow">
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">
-          Portfolio Website
-        </h4>
-        <p class="flex-grow mb-4 text-gray-600">
-          This site — built with HTML, Tailwind CSS, JS, hosted on GitHub Pages.
-        </p>
-        <a href="https://github.com/ValiantusDev/ValiantusDev"
-           class="mt-auto block text-center bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
-          View Code
-        </a>
+  <!-- Skills & Tech -->
+  <section id="skills" class="max-w-5xl mx-auto px-4 py-16 bg-gray-50 dark:bg-gray-900 rounded-lg">
+    <h3 class="text-3xl font-semibold text-center mb-8">Skills & Tech</h3>
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-gray-800 dark:text-gray-200">
+      <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">
+        <h4 class="font-semibold mb-4">Languages</h4>
+        <ul class="space-y-2">
+          <li>C#</li>
+          <li>Python</li>
+          <li>Kotlin</li>
+          <li>JavaScript</li>
+          <li>HTML &amp; CSS</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">
+        <h4 class="font-semibold mb-4">Frameworks</h4>
+        <ul class="space-y-2">
+          <li>.NET Core (C#)</li>
+          <li>React (learning)</li>
+          <li>Node.js (learning)</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">
+        <h4 class="font-semibold mb-4">Tools &amp; Technologies</h4>
+        <ul class="space-y-2">
+          <li>Git &amp; GitHub</li>
+          <li>OpenCV</li>
+          <li>SQL (learning)</li>
+          <li>VMware</li>
+          <li>CAD Modeling</li>
+          <li>UiPath</li>
+        </ul>
+      </div>
+      <div class="p-4 bg-white dark:bg-gray-800 rounded shadow">
+        <h4 class="font-semibold mb-4">Other / Methodologies</h4>
+        <ul class="space-y-2">
+          <li>Agile (Scrum &amp; Kanban)</li>
+          <li>ARM-based IoT &amp; Raspberry Pi</li>
+          <li>Robotics &amp; Electronics</li>
+        </ul>
       </div>
     </div>
+  </section>
 
-    <!-- Card 2 -->
-    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
-      <img src="assets/images/Android_Kotlin.png" alt="E-commerce app screenshot"
-           class="w-full h-auto object-cover" />
-      <div class="p-4 flex flex-col flex-grow">
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">
-          Android E‑commerce MVP
+  <!-- Projects -->
+  <section id="projects" class="max-w-5xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-semibold text-center mb-8">Projects & Skills</h3>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+        <img src="assets/images/Portfolio.png" alt="Portfolio screenshot" class="w-full h-auto object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+            Portfolio Website
+          </h4>
+          <p class="flex-grow mb-4 text-gray-600">
+            This site — built with HTML, Tailwind CSS, JS, hosted on GitHub Pages.
+          </p>
+          <a href="https://github.com/ValiantusDev/ValiantusDev"
+            class="mt-auto block text-center bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+            View Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+        <img src="assets/images/Android_Kotlin.png" alt="E-commerce app screenshot"
+          class="w-full h-auto object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+            Android E-commerce MVP
+          </h4>
+          <p class="flex-grow mb-4 text-gray-600">
+            Kotlin front/back, Stripe payments, BA docs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Placeholder A (new) -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+        <div class="w-full h-48 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+          <span class="text-gray-400 dark:text-gray-500">No preview yet</span>
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+            Placeholder Project A
+          </h4>
+          <p class="flex-grow mb-4 text-gray-600">
+            Short description placeholder. Replace with project summary and image.
+          </p>
+          <button disabled
+            class="mt-auto block text-center bg-gray-300 text-gray-600 px-4 py-2 rounded cursor-not-allowed">Coming
+            Soon</button>
+        </div>
+      </div>
+
+      <!-- Placeholder B (new) -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+        <div class="w-full h-48 bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+          <span class="text-gray-400 dark:text-gray-500">No preview yet</span>
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+            Placeholder Project B
+          </h4>
+          <p class="flex-grow mb-4 text-gray-600">
+            Short description placeholder. Replace with project summary and image.
+          </p>
+          <button disabled
+            class="mt-auto block text-center bg-gray-300 text-gray-600 px-4 py-2 rounded cursor-not-allowed">Coming
+            Soon</button>
+        </div>
+      </div>
+
+      <!-- Card 3 (was previously third) -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
+        <img src="assets/images/Masterwatch_icon.png" alt="Masterwatch Game screenshot"
+          class="w-full h-auto object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+            Masterwatch Game
+          </h4>
+          <p class="flex-grow mb-4 text-gray-600">
+            Cross-Platform, Written in C#, Using Monogame, Gum, Aseprite and others!
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4: Discord Widget -->
+      <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col p-4">
+        <h4 class="font-semibold text-lg mb-2 text-gray-900 text-center">
+          Masterwatch Community
         </h4>
-        <p class="flex-grow mb-4 text-gray-600">
-          Kotlin front/back, Stripe payments, BA docs.
-        </p>
+        <div class="flex-grow overflow-auto p-2">
+          <iframe src="https://discord.com/widget?id=1398734575227768963&theme=dark" width="100%" height="450"
+            allowtransparency="true" frameborder="0"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Card 3 -->
-    <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col">
-      <img src="assets/images/Masterwatch_icon.png" alt="Project 3 screenshot"
-           class="w-full h-auto object-cover" />
-      <div class="p-4 flex flex-col flex-grow">
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">
-          Masterwatch - Game
-        </h4>
-        <p class="flex-grow mb-4 text-gray-600">
-          Cross-Platform, Written in C#, Using Monogame, Gum, Aseprite and others!
-        </p>
-      </div>
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-5xl mx-auto px-4 py-16 bg-gray-50 dark:bg-gray-900 rounded-lg mt-12">
+    <h3 class="text-3xl font-semibold text-center mb-8">My Pricing</h3>
+    <div class="max-w-xl mx-auto space-y-6 text-center text-gray-800 dark:text-gray-200">
+      <p class="text-xl">
+        <strong>Default monthly rate:</strong> €3000 / month
+      </p>
+      <p class="text-xl">
+        <strong>Hourly rate for smaller projects or assisting:</strong> €18 / hour
+      </p>
+      <a href="https://github.com/ValiantusDev/ValiantusDev/assets/files/CV-GytisV.pdf" target="_blank"
+        class="inline-block mt-4 bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700 transition">
+        View or Download My CV
+      </a>
     </div>
-    
-  </div>
-</section>
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="bg-white dark:bg-gray-800 py-16">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-semibold mb-4">Get in Touch</h3>
-      <p class="mb-2">Email: <a href="mailto:gytis.valatkevicius@gmail.com"
-                                 class="text-blue-600 hover:underline dark:text-blue-400">
-        gytis.valatkevicius@gmail.com</a></p>
-      <p class="mb-2">Discord: <a href="https://discordapp.com/users/186108682583408640"
-                                   class="text-blue-600 hover:underline dark:text-blue-400" target="_blank">
-        .Valiantus</a></p>
-      <p class="italic text-gray-500 dark:text-gray-400">Preferred contact via email.</p>
+      <h3 class="text-3xl font-semibold mb-6">Get in Touch</h3>
+
+      <!-- Social Icons Row (all from Font Awesome, uniform) -->
+      <div class="flex justify-center space-x-4 mb-6 text-gray-800 dark:text-gray-200">
+        <a href="mailto:Valiantus@proton.me" aria-label="Email"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-inherit"
+          title="Email">
+          <i class="fa-solid fa-envelope fa-fw text-xl"></i>
+        </a>
+
+        <a href="https://discord.com/users/186108682583408640" target="_blank" rel="noopener noreferrer"
+          aria-label="Discord"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-inherit"
+          title="Discord">
+          <i class="fa-brands fa-discord fa-fw text-xl"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/gytis-valatkevicius-885a64196/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-inherit"
+          title="LinkedIn">
+          <i class="fa-brands fa-linkedin fa-fw text-xl"></i>
+        </a>
+
+        <a href="https://github.com/ValiantusDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-inherit"
+          title="GitHub">
+          <i class="fa-brands fa-github fa-fw text-xl"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@TheValiantus" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-inherit"
+          title="YouTube">
+          <i class="fa-brands fa-youtube fa-fw text-xl"></i>
+        </a>
+      </div>
+
+      <p class="text-gray-600 dark:text-gray-400 italic text-sm mb-8">
+        References available upon request.
+      </p>
+
+      <!-- Toggle Contact Form Button -->
+      <button id="toggleForm" class="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition">
+        Open Contact Form
+      </button>
+
+      <!-- Contact Form (hidden by default) -->
+      <form id="contactForm" action="mailto:gytis.valatkevicius@gmail.com" method="post" enctype="text/plain"
+        class="hidden mt-8 max-w-md mx-auto space-y-4 text-left text-gray-900 dark:text-gray-100">
+        <label class="block">
+          <span>Name</span>
+          <input type="text" name="name" required
+            class="mt-1 block w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 p-2" />
+        </label>
+        <label class="block">
+          <span>Email</span>
+          <input type="email" name="email" required
+            class="mt-1 block w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 p-2" />
+        </label>
+        <label class="block">
+          <span>Message</span>
+          <textarea name="message" rows="4" required
+            class="mt-1 block w-full rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 p-2"></textarea>
+        </label>
+        <button type="submit"
+          class="w-full bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700 transition">Send</button>
+      </form>
     </div>
   </section>
 
-  <!-- Custom JS -->
+  <footer class="text-center py-6 text-gray-500 dark:text-gray-400">
+    &copy; 2025 Valiantus. All rights reserved.
+  </footer>
+
+  <!-- Your JS -->
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>

@@ -17,5 +17,5 @@ My projects and skills can be viewed in detail in a portfolio site *(Hosted by G
 More info when development nears public testing.
 
 ## 📫 Contact
-- Email: gytis.valatkevicius@gmail.com
+- Email: Valiantus@proton.me
 - Discord: [.Valiantus](https://discordapp.com/users/186108682583408640)
